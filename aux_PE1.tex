@@ -1,0 +1,433 @@
+\documentclass[a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage[margin=2cm]{geometry}
+\newcommand{\bld}{\textbf}
+\newcommand{\espaco}{\;\;\;}
+\begin{document}
+	\begin{center}
+		\LARGE{\sc{Resumo teste Probabilidades}}
+	\end{center}
+	\section*{Capítulo 2}
+	\begin{itemize}
+		\item Consquências elementares dos axiomas
+		\begin{itemize}
+			\item $P(\varnothing)=0$
+			\item $P(\overline A)=1-P(A)$
+			\item $A\subset B\Rightarrow P(A)\leq P(B)$
+			\item $P(B\setminus A)=P(B)-P(A\cap B)$
+		\end{itemize}
+		\item Propriedades
+		\begin{itemize}
+			\item Associatividade
+			\begin{itemize}
+				\item $(A\cap B)\cap C=A\cap (B\cap C)$
+				\item $(A\cup B)\cup C=A\cup (B\cup C)$
+			\end{itemize}
+			\item Comutatividade
+			\begin{itemize}
+				\item $A\cap B=B\cap A$
+				\item $A\cup B=B\cup A$
+			\end{itemize}
+			\item Distributividade
+			\begin{itemize}
+				\item $(A\cap B)\cup C=(A\cup C)\cap (B\cup C)$
+				\item $(A\cup B)\cap C=(A\cap C)\cup (B\cap C)$
+			\end{itemize}
+			\item Idempotência
+			\begin{itemize}
+				\item $A\cap A=A$
+				\item $A\cup A=A$
+			\end{itemize}
+			\item Leis de De Morgan
+			\begin{itemize}
+				\item $\overline{A\cap B}=\overline A \cup \overline B$
+				\item $\overline{A\cup B}=\overline A \cap \overline B$
+			\end{itemize}
+		\end{itemize}
+		\item Conjuntos disjuntos
+		\begin{itemize}
+			\item $A\cup B=A+B-(A\cap B)$
+		\end{itemize}
+		\item Probabilidade condicionada
+		\begin{itemize}
+			\item $P(A|B)=\frac{P(A\cap B)}{P(B)},\; P(B)>0$
+		\end{itemize}
+		\item Lei das probabilidades compostas
+		\begin{itemize}
+			\item $P(A\cap B)=P(B)\times P(A|B)=P(B)\times\frac{P(A\cap B)}{P(B)}=P(A\cap B)$
+		\end{itemize}
+		\item Lei da probabilidade total
+		\begin{itemize}
+			\item $P(B)=\sum_{i=1}^n P(B|A_i)\times P(A_i)$
+		\end{itemize}
+		\item Teorema de Bayes
+		\begin{itemize}
+			\item $P(A_i|B)=P(B|A_i)\times\frac{P(A_i)}{P(B)}$
+		\end{itemize}
+		\item Acontecimentos independentes
+		\begin{itemize}
+			\item Dois acontecimentos dizem-se independentes sse $P(A\cap B)=P(A)\times P(B)$, e escrevem-se $A\amalg B$.
+			\item Se $A$ e $B$ são independentes com $P(A)>0$ e $P(B)>0$, então $P(A|B)=P(A)$ e $P(B|A)=P(B)$.
+			\item Se $A\cap B=\varnothing$ e $P(A)>0$ e $P(B)>0$ então $A\not{\amalg}B$.
+			\item Se $A\amalg B$ então:
+			\begin{itemize}
+				\item $\overline A\amalg B$
+				\item $A\amalg\overline B$
+				\item $\overline A\amalg\overline B$
+			\end{itemize}
+		\end{itemize}
+		\item Independência completa
+		\begin{itemize}
+			\item $A$, $B$ e $C$ dizem-se completamente independentes sse:
+			\begin{itemize}
+				\item $P(A\cap B)=P(A)\times P(B)$
+				\item $P(A\cap C)=P(A)\times P(C)$
+				\item $P(B\cap C)=P(B)\times P(C)$
+				\item $P(A\cap B\cap C)=P(A)\times P(B)\times P(C)$
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+	\section*{Capítulo 3}
+	\begin{itemize}
+		\item Função de probabilidade (v.a. discreta)
+		\begin{itemize}
+			\item $P(X=x)=\begin{cases}
+			P(X=x_i),&\text{se } x=x_i\in\mathbb R_X\\
+			0,&\text{c.c.}
+			\end{cases}$
+		\end{itemize}
+		\item Função de distribuição (v.a. discreta)
+		\begin{itemize}
+			\item $F_X(x)=P(X\leq x)=\sum_{x_i\leq x}P(X=x_i),\;x\in\mathbb R$ (não leva ``caso contrário'')
+			\item Função em escada com tantos pontos de descontinuidade quantos os valores distintos de $\mathbb R_X$.
+			\item Função contínua à direita, monótona e não decrescente.
+		\end{itemize}
+		\item Valor esperado (v.a. discreta)
+		\begin{itemize}
+			\item $E(X)=\sum_{x=m}^n xP(X=x),\espaco m$: valor mínimo da f.p., $n$: valor máximo da f.p. (ver exemplo 3.22)
+			\item $E(b)=b,\;\forall b\in\mathbb R$
+			\item $E(aX+b)=aE(X)+b,\;\forall a,b \in \mathbb R$
+		\end{itemize}
+		\item Moda (v.a. discreta)
+		\begin{itemize}
+			\item Abcissa máxima da f.p. de $X$.
+		\end{itemize}
+		\item Mediana (v.a. discreta)
+		\begin{itemize}
+			\item $\begin{cases}
+			P(X\leq me)\geq \frac 1 2\\
+			P(X\geq me)\geq \frac 1 2
+			\end{cases}$
+			\item $me=F_X^{-1}(x)$
+		\end{itemize}
+		\item Quantil de probabilidade
+		\begin{itemize}
+			\item A mediana da v.a. $X$ corresponde a $\chi_{1/2}=F_X^{-1}\left(\frac 1 2\right)$ (quantil).
+			\item $\chi_p:F_X(\chi_p)\leq p+P(X=\chi_p)$
+		\end{itemize}
+		\item Variância (v.a. discreta)
+		\begin{itemize}
+			\item $V(X)=E(X^2)-E^2(X)$
+			\item $E(X^2)=\sum_{x=m}^n x^2P(X=x),\espaco E^2(X)=\left[\sum_{x=m}^n xP(X=x)\right]^2,\espaco m$: valor mínimo da f.p., $n$: valor máximo da f.p.
+			\item $V(b)=0,\;\forall b \in \mathbb R$
+			\item $V(aX+b)=a^2V(X),\;\forall a,b\in\mathbb R$
+		\end{itemize}
+		\item Desvio padrão
+		\begin{itemize}
+			\item $\sigma(X)=+\sqrt{V(X)}$
+		\end{itemize}
+		\item Coeficiente de variação
+		\begin{itemize}
+			\item $CV(X)=\frac{\sigma(X)}{|E(X)|},\;E(X)\neq 0$
+		\end{itemize}
+		\item {\large \bld{Distribuição uniforme discreta}}
+		\begin{itemize}
+			\item $X\sim\text{uniforme discreta}(\{x_1,x_2,\ldots,x_n\})$
+			\item $P(X=x)=\frac 1 n$
+			\item $E(X)=\frac 1 n \sum_{i=1}^n x_i$
+			\item $V(X)=E(X^2)-E^2(X)$
+			\item Utilizada quando a v.a. discreta toma $n$ valores distintos equiprováveis.
+		\end{itemize}
+		\item {\large \bld{Distribuição binomial/Bernoulli}}
+		\begin{itemize}
+			\item $X\sim \text{Bernoulli}(p)$
+			\item $P(X=x)=p^x(1-p)^{1-x},\;x=0,1$ (Bernoulli)
+			\item $E(X)=p$
+			\item $V(X)=p(1-p)$
+			\item Utilizada quando a v.a. discreta toma apenas dois resultados possíveis.
+			\item $X\sim \text{binomial}(n,p)$
+			\item $P(X=x)=\binom n x p^x(1-p)^{n-x},\;x=0,\ldots,n$ (binomial)
+			\item $\binom n x=\frac{n!}{x!(n-x)!}$
+			\item $E(X)=np$
+			\item $V(X)=np(1-p)$
+			\item Utilizada na caracterização probabilística do número de sucessos em $n$ provas de Bernoulli realizadas de forma independente e equiprováveis (propabilidade $p$).
+			\item $F_X(x)=P(X\leq x)=\begin{cases}
+			0,&x<0\\
+			\sum_{i=0}^{[x]}\binom n i p^i(1-p)^{n-i},&0\leq x<n\\
+			1,&x\geq n
+			\end{cases}\;\;[x]$ representa a parte inteira do real $x$.
+			\item $F_X(x)$ encontra-se tabelada.
+		\end{itemize}
+		\item {\large \bld{Distribuição geométrica}}
+		\begin{itemize}
+			\item $X\sim \text{geométrica}(p)$
+			\item $P(X=x)=p(1-p)^{x-1},\;x=1,2,3,\ldots$
+			\item $E(X)=\frac 1 p$
+			\item $V(X)=\frac{1-p}{p^2}$
+			\item Utilizada na contabilização do número total de provas de Bernoulli realizadas até ao registo do primeiro sucesso.
+			\item $F_X(x)=P(X\leq x)=\begin{cases}
+			0,&x<1\\
+			\sum_{i=1}^{[x]}p(1-p)^{i-1}=1-(1-p)^{[x]},&x\geq 1
+			\end{cases}$
+		\end{itemize}
+		\item {\large \bld{Distribuição hipergeométrica}}
+		\begin{itemize}
+			\item $X\sim\text{hipergeométrica}(N,M,n)$
+			\item $P(X=x)=\binom M x \binom{N-M}{n-x}\left/\binom N n \right.,\;x=\max\{0,n-(N-M)\},\ldots,\min\{n,M\}$
+			\begin{itemize}
+				\item $N$: número total de elementos numa população
+				\item $M$: número de elementos dessa população que possuem certa característica
+				\item $n$: número de extracções sem reposição
+			\end{itemize}
+			\item $E(X)=n\frac M N$
+			\item $V(X)=n\frac M N \left(1-\frac M N\right)\frac{N-n}{N-1}$
+			\item Utilizada em extracções sem reposição
+		\end{itemize}
+		\item {\large \bld{Distribuição de Poisson}}
+		\begin{itemize}
+			\item $X\sim\text{Poisson}(\lambda)$
+			\item $P(X=x)=e^{-\lambda}\frac{\lambda^x}{x!},\;x=0,1,2,\ldots$
+			\item $E(X)=V(X)=\lambda$
+			\item Utilizada na contagem de ocorrências de certo tipo de evento em períodos fixos de tempo.
+			\item $F_X(x)=P(X\leq x)=\begin{cases}
+			0,&x<0\\
+			\sum_{i=0}^{[x]}e^{-\lambda}\frac{\lambda^i}{i!},&x\geq 0
+			\end{cases}$
+			\item $F_X(x)$ encontra-se tabelada.
+		\end{itemize}
+		\item Permutações: $n!$, $n$ elementos e compartimentos
+		\item Arranjos com repetição: $n^x$, $n$ elementos, $x$ compartimentos
+		\item Arranjos sem repetição: $\frac{n!}{(n-x)!}$, $n$ elementos, $x$ compartimentos
+		\item Combinações: $\binom n x=\frac{n!}{x!(n-x)!}$, $n$ elementos, $x$ compartimentos
+	\end{itemize}
+	\section*{Capítulo 4}
+	\begin{itemize}
+		\item Função de densidade de probabilidade (v.a. contínua)
+		\begin{itemize}
+			\item $f_X(x)\geq 0,\forall x\in\mathbb R$
+			\item $\int_a^b f_x(x)\,dx=P(a<X\leq b),\forall a<b$
+			\item $P(a<x\leq b)=P(a\leq x\leq b)=P(a\leq x<b)=P(a<x<b),\;\forall a<b$
+		\end{itemize}
+		\item Função de distribuição (v.a. contínua)
+		\begin{itemize}
+			\item $F_X(x)=\begin{cases}
+			\int_{-\infty}^x f_X(x)\,dx,&x<a\\
+			\int_{-\infty}^a f_X(x)\,dx+\int_a^x f_X(x)\,dx,&a<x<b\\
+			\int_{-\infty}^a f_X(x)\,dx+\int_a^b f_X(x)\,dx+\int_b^x f_X(x)\,dx,&b<x<c\\
+			\cdots\\
+			\int_{-\infty}^a f_X(x)\,dx+\int_a^b f_X(x)\,dx+\int_b^c f_X(x)\,dx+\cdots+\int_\psi^x f_X(x)\,dx,&x>\psi
+			\end{cases}$
+		\end{itemize}
+		\item Valor esperado (v.a. contínua)
+		\begin{itemize}
+			\item $E(X)=\int_{-\infty}^{+\infty}xf_X(x)\,dx$. Se $f_X(x)$ for definida por ramos, deve dividir-se o integral de $-\infty$ até ao limite do ramo, e do limite do ramo até $+\infty$.
+			\item Goza das mesmas propriedades que o valor esperado para v.a. discretas.
+		\end{itemize}
+		\item Moda (v.a. contínua)
+		\begin{itemize}
+			\item $mo:\begin{cases}
+			\left.\frac{df_x(x)}{dx}\right|_{x=mo}\\
+			\left.\frac{d^2f_X(x)}{dx^2}\right|_{x=mo}
+			\end{cases}$
+		\end{itemize}
+		\item Mediana (v.a. contínua)
+		\begin{itemize}
+			\item $me\in[0,1]: F_X(me)=\frac 1 2\Leftrightarrow \int_{0}^{me} f_X(x)\,dx=\frac 1 2$
+		\end{itemize}
+		\item Quantil de probabilidade (v.a. contínua)
+			\begin{itemize}
+		\item $\chi_p:F_X(\chi_p)=p$, $p$: ordem do quantil
+		\end{itemize}
+		\item Variância (v.a. contínua)
+		\begin{itemize}
+		\item $V(X)=E(X^2)-E^2(X)$
+		\item $E(X^2)=\int_{-\infty}^{+\infty} x^2f_X(x)\,dx\espaco E^2(X)=\left[\int_{-\infty}^{+\infty}xf_X(x)\,dx\right]^2$
+		\item Goza das mesmas propriedades que a variância para v.a. discretas.
+		\end{itemize}
+		\item Desvio padrão
+		\begin{itemize}
+		\item $\sigma(X)=+\sqrt{V(X)}$
+		\end{itemize}
+		\item Coeficiente de variação
+		\begin{itemize}
+		\item $CV(X)=\frac{\sigma(X)}{|E(X)|},\;E(X)\neq 0$
+		\end{itemize}
+		\item {\large \bld{Distribuição uniforme contínua}}
+		\begin{itemize}
+		\item $X\sim \text{uniforme}(a,b)$
+		\item $f_X(x)=\frac 1{b-a},a\leq x\leq b$
+		\item $E(X)=\frac{a+b}2$
+		\item $V(X)=\frac{(b-a)^2}{12}$
+		\item Utilizada quando a v.a., conhecida e limitada, é equiprovável.
+		\end{itemize}
+		\item {\large \bld{Distribuição normal}}
+		\begin{itemize}
+		\item $X\sim \text{normal}(\mu,\sigma^2)$
+		\item $f_X(x)=\frac 1{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),\;-\infty<x<+\infty$
+		\item $E(X)=\mu$
+		\item $V(X)=\sigma^2$
+		\item $F_X(x)=\int_{-\infty}^{x}\frac 1{\sigma\sqrt{2\pi}}\exp\left(-\frac{(t-\mu)^2}{2\sigma^2}\right)\,dt,\;-\infty<x<+\infty$
+		\item $F_X(x)$ encontra-se tabelada
+		\end{itemize}
+		\item {\large \bld{Distribuição exponencial}}
+		\begin{itemize}
+		\item $X\sim\text{exponencial}(\lambda)$
+		\item $f_X(x)=\lambda e^{-\lambda x},\;x\geq 0$
+		\item $E(X)=\frac 1 \lambda$
+		\item $V(X)=\frac 1{\lambda^2}$
+		\item Utilizada na modelação de tempos entre ocorrências consecutivas.
+		\item $F_X(x)=\begin{cases}
+		0,&x\leq 0\\
+		1-e^{-\lambda x},&x\geq 0
+		\end{cases}$
+		\end{itemize}
+		\item Processo de Poisson
+		\begin{itemize}
+		\item Seja $N_t$ o número de ocorrências de um evento em $]0,t],\;t>0$ e $X_i$ o tempo entre as ocorrências consecutivas $(i-1)$ e $i$ do evento, $i\in\mathbb N$. Então, $N_t\sim \text{Poisson}(\lambda t)$ e $X_i\overset{\text{i.i.d.}}{\sim}\text{exponencial}(\lambda),\;i\in\mathbb N$
+		\end{itemize}
+	\end{itemize}
+	\section*{Capítulo 5}
+	\begin{itemize}
+		\item Par aleatório discreto
+		\begin{itemize}
+			\item $P[(X,Y)\in\mathbb R_{X,Y}]=\sum_i\sum_j P(X=x_i,Y=y_j)=1$
+		\end{itemize}
+		\item Função de probabilidade conjunta
+		\begin{itemize}
+			\item $P(X=x,Y=y)=\begin{cases}P(X=x_i,Y=y_j),&\text{se }(x,y)=(x_i,y_j)\in\mathbb R_{X,Y}\\
+			0,&\text{c.c.}\end{cases}$
+		\end{itemize}
+		\item Função de distribuição conjunta (caso discreto)
+		\begin{itemize}
+			\item $F_{X,Y}=P(X\leq x,Y\leq y)=\sum_{x_i\leq x}\sum_{y_j\leq y} P(X=x_i,Y=y_j),(x,y)\in\mathbb R^2$
+		\end{itemize}
+		\item Funções de probabilidade marginais de $X$ e de $Y$
+		\begin{itemize}
+			\item $P(X=x)=\sum_{\underset{\text{fixo}}{y}} P(X=x,Y=y)$
+			\item $P(Y=y)=\sum_{\underset{\text{fixo}}{x}} P(X=x,Y=y)$
+		\end{itemize}
+		\item Funções de distribuição marginais de $X$ e $Y$ (caso discreto)
+		\begin{itemize}
+			\item $F_X(x)=P(X\leq x)=\sum_{x_i\leq x}P(X=x_i)=\sum_{x_i\leq x}\sum_{\underset{\text{fixo}}{y}} P(X=x_i,Y=y),x\in\mathbb R$
+			\item $F_Y(y)=P(Y\leq y)=\sum_{y_j\leq y}P(Y=y_j)=\sum_{y_j\leq y}\sum_{\underset{\text{fixo}}{x}} P(X=x,Y=y_j),y\in\mathbb R$
+		\end{itemize}
+		\item Funções de probabilidade condicionais (caso discreto)
+		\begin{itemize}
+			\item $X$ condicional a $Y=y$: $P(X=x|Y=y)=\frac{P(X=x,Y=y)}{P(Y=y)},$ se $P(Y=y)>0$
+			\item $Y$ condicional a $X=x$: $P(Y=y|X=x)=\frac{P(X=x,Y=y)}{P(X=x)},$ se $P(X=x)>0$
+		\end{itemize}
+		\item Funções de distribuição condicionais (caso discreto)
+		\begin{itemize}
+			\item F.d. de $X$ condicional a $Y=y$: $F_{X|Y=y}(x)=P(X\leq x|Y=y)=\sum_{x_i\leq x} P(X=x_i|Y=y)=\sum_{x_i\leq x} \frac{P(X=x_i,Y=y)}{=(Y=y)},x\in\mathbb R$
+			\item F.d. de $Y$ condicional a $X=x$: $F_{Y|X=x}(y)=P(Y\leq y|X=x)=\sum_{y_j\leq y} P(Y=y_j|X=x)=\sum_{y_j\leq y} \frac{P(X=x,Y=y_j)}{P(X=x)},y\in\mathbb R$
+		\end{itemize}
+		\item Valores esperados condicionais (caso discreto)
+		\begin{itemize}
+			\item $E(X|Y=y)=\sum_x xP(X=x|Y=y)$
+			\item $E(Y|X=x)=\sum_y yP(Y=y|X=x)$
+		\end{itemize}
+		\item Variâncias condicionais (caso discreto)
+		\begin{itemize}
+			\item $V(X|Y=y)=E(X^2|Y=y)-E^2(X|Y=y)$
+			\item $E(X^2|Y=y)=\sum_x x^2P(X=x|Y=y)$
+		\end{itemize}
+		\item Independência (caso discreto)
+			\begin{itemize}
+				\item As v.a. discretas $X$ e $Y$ dizem-se independentes se $P(X=x,Y=y)=P(X=x)\times P(Y=y),\forall (x,y)\in\mathbb R^2$ e escrevem-se $X\amalg Y$.
+				\item Se $X\amalg Y$:
+				\begin{itemize}
+					\item $P(X=x|Y=y)=P(X=x),\forall(x,y)\in\mathbb R^2$
+					\item $E(X|Y=y)=E(X),\forall y\in\mathbb R$
+					\item $V(X|Y=y)=V(X),\forall y\in\mathbb R$
+					\item $P(Y=y|X=x)=P(Y=y),\forall (x,y)\in\mathbb R^2$
+					\item $E(Y|X=x)=E(Y),\forall x\in\mathbb R$
+					\item $V(Y|X=x)=V(Y),\forall x\in\mathbb R \amalg $
+				\end{itemize}
+			\end{itemize}
+			\item Função de densidade de probabilidade conjunta
+			\begin{itemize}
+				\item $f_{X,Y}\geq 0,\forall (x,y)\in\mathbb R^2$
+				\item $\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} f_{X,Y}(x,y)\,dy\,dx=1$
+			\end{itemize}
+			\item Função de distribuição conjunta (caso contínuo)
+			\begin{itemize}
+				\item $F_{X,Y}(x,y)=\int_{-\infty}^x\int_{-\infty}^yf_{X,Y}(u,v)\,dv\,du,\forall(x,y)\in\mathbb R^2$
+			\end{itemize}
+			\item Funções de densidade de probabilidade marginais de $X$ e $Y$
+			\begin{itemize}
+				\item $f_X(x)=\int_{-\infty}^{+\infty}f_{X,Y}(x,y)\,dy=\int_{a}^{b}f_{X,Y}(x,y)\,dy$
+				\item $f_Y(y)=\int_{-\infty}^{+\infty}f_{X,Y}(x,y)\,dx=\int_{a}^{b}f_{X,Y}(x,y)\,dx$
+				\item $a$ e $b$ são os limites do(s) ramo(s) da função de densidade de probabilidade onde está incluída a variável de integração. Se estes envolverem infinito(s), este(s) deve(m) ser substituído(s) por 0 ou 1.
+			\end{itemize}
+			\item Funções de distribuição marginais de $X$ e $Y$ (caso contínuo)
+			\begin{itemize}
+				\item $F_X(x)=P(X\leq x)=\int_{-\infty}^x\int_{-\infty}^{+\infty}f_{X,Y}(u,y)\,dy\,du$
+				\item $F_Y(y)=P(Y\leq y)=\int_{-\infty}^y\int_{-\infty}^{+\infty}f_{X,Y}(x,u)\,dx\,du$
+			\end{itemize}
+			\item Valores esperados condicionais (caso contínuo)
+			\begin{itemize}
+				\item $E(X|Y=y)=\int_{-\infty}^{+\infty}xf_{X|Y=y}(x)\,dx$
+			\end{itemize}
+			\item Variâncias condicionais (caso contínuo)
+			\begin{itemize}
+				\item $V(X|Y=y)=E(X^2|Y=y)-E^2(X|Y=y)$
+				\item $E(X^2|Y=y)=\int_{-\infty}^{+\infty}x^2f_{X|Y=y}(x)\,dx$
+			\end{itemize}
+			\item Independência
+			\begin{itemize}
+				\item As v.a. contínuas $X$ e $Y$ dizem-se independentes se $$f_{X,Y}(x,y)=f_X(x)\times f_Y(y),\forall(x,y)\in\mathbb R^2$$ e escrevem-se $X\amalg Y$. Equivalentemente, se $X\amalg Y$, então $$F_{X,Y}(x,y)=F_X(x)\times F_Y(y),\forall(x,y)\in\mathbb R^2$$
+			\end{itemize}
+			\item Covariância
+			\begin{itemize}
+				\item $cov(X,Y)=E(XY)-E(X)E(Y)$
+				\item $E(X,Y)=\sum_x\sum_yxyP(X=x,Y=y)$ (caso discreto)
+				\item $E(X,Y)=\int_a^b\int_c^dxyf_{X,Y}(x,y)\,dy\,dx$ ($a, b, c$ e $d$ são os limites do(s) ramos da f.d.p. onde estão incluídas as variáveis de integração de cada integral) (caso contínuo)
+				\item $X\amalg Y\Rightarrow cov(X,Y)=0$
+				\item $cov(X,Y)=0\not\Rightarrow X\amalg Y$
+				\item $cov(X,Y)\neq 0\Rightarrow X\not\amalg Y$
+				\item $cov(X,X)=V(X)$
+				\item $cov(aX+b,Y)=a\,cov(X,Y)$
+				\item $cov(X+Z,Y)=cov(X,Y)+cov(Z,Y)$
+			\end{itemize}
+			\item Correlação
+			\begin{itemize}
+				\item $corr(X,Y)=\frac{cov(X,Y)}{\sqrt{V(X)V(Y)}}$
+				\item Se $corr(X,Y)\neq 0$ as v.a. estão correlacionadas
+				\item $X\amalg Y\Rightarrow corr(X,Y)=0$
+				\item $corr(X,Y)=0\not\Rightarrow X\amalg Y$
+				\item $corr(X,Y)\neq 0\Rightarrow X\not\amalg Y$
+				\item $corr(X,X)=1$
+				\item $corr(aX+b,Y)=corr(X,Y)$
+			\end{itemize}
+			\item Teorema do Limite Central
+				\begin{itemize}
+				\item $P(X\leq a)=\Phi\left(\frac{a-E(X)}{\sqrt{V(X)}}\right)$
+				\item $P(X>a)=1-P(X\leq a)=1-\Phi\left(\frac{a-E(X)}{\sqrt{V(X)}}\right)$
+				\item $P(a<X<b)=P\left(\frac{a-E(X)}{\sqrt{V(X)}}<\frac{X-E(X)}{\sqrt{V(X)}}<\frac{b-E(X)}{\sqrt{V(X)}} \right)=\Phi\left(\frac{b-E(X)}{\sqrt{V(X)}}\right)-\Phi\left(\frac{a-E(X)}{\sqrt{V(X)}}\right)$
+			\end{itemize}
+			\item Aproximações de distribuições\\
+			\begin{tabular}{lll}
+				\hline
+				v.a. original&v.a. aproximativa&Condições de aproximação\\\hline
+				$X\sim\text{ hipergeométrica}(N,M,n)$&$\tilde X\sim\text{ binomial}(n,M/N)$&$n<0.1N$\\
+				$X\sim\text{ binomial}(n,p)$&$\tilde X\sim\text{ Poisson}(np)$&$n>20$ e $p<0.1$\\
+				$X\sim\text{ binomial}(n,p)$&$\tilde X\sim\text{ normal}(np,np(1-p))$&$np>5$ e $n(1-p)>5$\\
+				$X\sim\text{ Poisson}(\lambda)$&$\tilde X\sim\text{ normal}(\lambda,\lambda)$&$\lambda>5$\\\hline
+			\end{tabular}
+		\end{itemize}
+		\begin{flushright}
+			Pedro Bucho, 1º semestre 2011/2012
+		\end{flushright}
+\end{document}
