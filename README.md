@@ -1,4 +1,4 @@
 # LoremIpsum
 
-Alguns textos em LaTeX
+Textos em LaTeX
 
